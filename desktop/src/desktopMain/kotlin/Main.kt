@@ -4,13 +4,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
-import example.sayHello
 import example.root.RootScreen
-import example.settings.SettingsScreen
-import example.settings.SettingsViewModel
+import example.root.RootViewModel
 
 fun main() {
-    sayHello()
 
     application {
         val state = rememberWindowState().apply { size = DpSize(200.dp, 200.dp) }
@@ -18,9 +15,7 @@ fun main() {
             state = state,
             title = "Example"
         ) {
-            //SayHelloFromCommon()
-            //RootScreen()
-            SettingsScreen(SettingsViewModel())
+            RootScreen(RootViewModel())
         }
     }
 }
