@@ -7,9 +7,6 @@ plugins {
     alias(libs.plugins.kotlin.android) apply false
 }
 
-
-
-
 val myTask = "myTask1"
 val myTask2 = "myTask2"
 

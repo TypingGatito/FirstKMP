@@ -18,6 +18,6 @@ kotlin {
 
 compose.desktop {
     application {
-        mainClass = "Main.kt"
+        mainClass = "example/Main.kt"
     }
 }
