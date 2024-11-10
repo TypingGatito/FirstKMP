@@ -1,12 +1,23 @@
 package example.events
 
 import androidx.compose.foundation.layout.BoxScope
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
+import example.common.ui.calendar.compose.CalendarColors
+import example.common.ui.calendar.compose.DatePickerView
+import example.common.ui.theme.AppThemeProvider
+import example.di.getKoinInstance
 
 @Composable
 fun BoxScope.EventScreen() {
-    Text("Events", modifier = Modifier.align(Alignment.Center))
+    DatePickerView(
+        viewModel = getKoinInstance(),
+        colors = CalendarColors.default.copy(
+            colorSurface = AppThemeProvider.colors.surface,
+            colorOnSurface = AppThemeProvider.colors.onSurface,
+            colorAccent = AppThemeProvider.colors.accent
+        ),
+        firstDayIsMonday = AppThemeProvider.appPrefs.firstDayIsMonday,
+        labels = emptyList(),
+        selectDayListener = { day -> }
+    )
 }

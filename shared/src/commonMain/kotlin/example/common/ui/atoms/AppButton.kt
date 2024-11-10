@@ -12,7 +12,7 @@ import example.common.ui.theme.AppThemeProvider
 @Composable
 fun AppButton(
     title: String,
-    modifier: Modifier,
+    modifier: Modifier = Modifier,
     onClick: () -> Unit,
 ) {
     OutlinedButton(
