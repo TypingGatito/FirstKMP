@@ -12,7 +12,7 @@ import example.categories.list.compose.CategoriesScreen
 import example.common.ui.theme.AppTheme
 import example.common.ui.theme.AppThemeProvider
 import example.di.getKoinInstance
-import example.events.EventScreen
+import example.events.list.compose.EventsScreen
 import example.root.RootViewModel
 import example.root.model.AppTab
 import example.settings.compose.SettingsScreen
@@ -43,7 +43,7 @@ fun RootScreen() {
 @Composable
 fun BoxScope.RootNavigation(selectedTab: AppTab) {
     when(selectedTab) {
-        AppTab.Events -> EventScreen()
+        AppTab.Events -> EventsScreen(getKoinInstance())
         AppTab.Settings -> SettingsScreen(getKoinInstance())
         AppTab.Categories -> CategoriesScreen(getKoinInstance())
     }
