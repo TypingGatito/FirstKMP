@@ -1,4 +1,4 @@
-package example.common.ui
+package example.common.ui.theme
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider

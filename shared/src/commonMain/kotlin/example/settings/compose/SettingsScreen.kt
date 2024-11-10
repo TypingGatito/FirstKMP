@@ -19,8 +19,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import dev.icerock.moko.resources.compose.stringResource
-import example.common.ui.AppThemeProvider
-import example.common.ui.LocalAppColors
+import example.common.ui.theme.AppThemeProvider
+import example.common.ui.theme.LocalAppColors
 import example.settings.SettingsViewModel
 import example.MR
 

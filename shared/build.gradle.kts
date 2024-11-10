@@ -19,6 +19,8 @@ kotlin {
                 implementation(compose.runtime)
                 implementation(compose.ui)
                 implementation(compose.material)
+                implementation(compose.material3)
+                implementation(compose.materialIconsExtended)
 
                 //resources
                 api(libs.resources.core)
@@ -29,6 +31,9 @@ kotlin {
 
                 //di
                 api(libs.koin.core)
+
+                //time
+                implementation(libs.datetime)
             }
         }
 

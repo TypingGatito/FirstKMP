@@ -9,13 +9,12 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import example.categories.CategoriesScreen
-import example.common.ui.AppTheme
-import example.common.ui.AppThemeProvider
+import example.common.ui.theme.AppTheme
+import example.common.ui.theme.AppThemeProvider
 import example.di.getKoinInstance
 import example.events.EventScreen
 import example.root.RootViewModel
 import example.root.model.AppTab
-import example.settings.SettingsViewModel
 import example.settings.compose.SettingsScreen
 
 @Composable

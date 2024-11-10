@@ -1,8 +1,7 @@
 package example.root.model
 
-import com.sun.jdi.connect.Connector.SelectedArgument
 import example.base.BaseViewState
-import example.common.ui.AppPrefs
+import example.common.ui.theme.AppPrefs
 
 class RootContract {
 

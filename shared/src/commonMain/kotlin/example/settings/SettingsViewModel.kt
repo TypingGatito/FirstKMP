@@ -24,4 +24,5 @@ class SettingsViewModel (
     fun switchTheme(isDark: Boolean) {
         settingsManager.themeIsDark = isDark
     }
+
 }

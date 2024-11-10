@@ -20,10 +20,7 @@ import androidx.compose.ui.unit.dp
 import dev.icerock.moko.resources.compose.painterResource
 
 import dev.icerock.moko.resources.compose.stringResource
-import dev.icerock.moko.resources.desc.Resource
-import dev.icerock.moko.resources.desc.StringDesc
-import example.MR
-import example.common.ui.AppThemeProvider
+import example.common.ui.theme.AppThemeProvider
 import example.root.model.AppTab
 import example.root.model.BottomBarItem
 
