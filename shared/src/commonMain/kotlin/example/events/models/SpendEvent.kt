@@ -1,5 +1,6 @@
 package example.events.models
 
+import events.EventDb
 import example.categories.model.Category
 import example.common.ui.calendar.model.CalendarLabel
 import example.extensions.now
@@ -31,17 +32,7 @@ data class SpendEvent (
                     createdAt = LocalDateTime.now(),
                     updatedAt = LocalDateTime.now()
         )
-        fun getStubs() = List(20) {
-            index ->
-            NONE.copy(
-                id = index.toString(),
-                title = "event $index",
-                date = Clock.System.now()
-                    .plus(index, DateTimeUnit.DAY, TimeZone.currentSystemDefault())
-                    .toLocalDateTime(TimeZone.currentSystemDefault())
-                    .date
-            )
-        }
+
     }
 
 }
@@ -59,4 +50,25 @@ fun SpendEvent.toCalendarLabel(category: Category) = CalendarLabel(
     id = id,
     colorHex = category.colorHex,
     localDate = date
+)
+
+fun SpendEvent.toDb() = EventDb(
+    id = id,
+    categoryId = categoryId,
+    title = title,
+    cost = cost,
+    date = date,
+    createdAt = createdAt,
+    updatedAt = updatedAt,
+    note = "note"
+)
+
+fun EventDb.toEntity() = SpendEvent(
+    id = id,
+    categoryId = categoryId,
+    title = title.orEmpty(),
+    cost = cost ?: 0.0,
+    date = date,
+    createdAt = createdAt,
+    updatedAt = updatedAt,
 )

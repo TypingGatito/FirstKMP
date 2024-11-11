@@ -1,12 +1,13 @@
 package example.events
 
 import example.events.models.SpendEvent
-import example.extensions.appLog
-import kotlinx.coroutines.flow.flow
+import example.events.models.SpendEventDao
 
-class EventsRepository {
+class EventsRepository(
+    private val dao: SpendEventDao
+) {
 
-    fun getAllFlow() = flow { emit(SpendEvent.getStubs()) }
+    fun getAllFlow() = dao.getAllFlow()
 
-    fun create(spendEvent: SpendEvent) = appLog("create event $spendEvent")
+    suspend fun create(spendEvent: SpendEvent) = dao.insert(spendEvent)
 }

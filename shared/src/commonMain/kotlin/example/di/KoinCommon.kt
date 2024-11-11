@@ -11,7 +11,7 @@ expect val platformModule: Module
 
 inline fun <reified T> getKoinInstance(qualifier: Qualifier? = null) : T {
     return object : KoinComponent {
-        val value : T by inject()
+        val value : T by inject(qualifier)
     }.value
 }
 
@@ -24,6 +24,8 @@ fun initKoin(
         platformModule,
         appModule,
         ViewModelsModule.viewModels,
-        RepositoriesModule.repositories
+        RepositoriesModule.repositories,
+        StorageModule.db,
+        StorageModule.dao,
     )
 }

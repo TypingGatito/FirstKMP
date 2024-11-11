@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.compose)
     alias(libs.plugins.android.library)
     alias(libs.plugins.moko.res)
+    alias(libs.plugins.sqldelight)
 }
 
 kotlin {
@@ -34,17 +35,24 @@ kotlin {
 
                 //time
                 implementation(libs.datetime)
+
+                //sqldelight
+                implementation(libs.sqldelight.coroutines.extensions)
             }
         }
 
         androidMain {
             dependsOn(commonMain)
+            dependencies {
+                implementation(libs.sqldelight.android.driver)
+            }
         }
 
         jvmMain {
             dependsOn(commonMain)
             dependencies {
                 api(compose.desktop.currentOs)
+                implementation(libs.sqldelight.desktop.driver)
             }
         }
     }
@@ -66,5 +74,15 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
+    }
+}
+
+
+sqldelight {
+    databases {
+        create("AppDb") {
+            packageName.set("example")
+            schemaOutputDirectory.set(file("src/commonMain/sqldelight/db"))
+        }
     }
 }
